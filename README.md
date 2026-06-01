@@ -13,6 +13,11 @@
 nginx1 > nginx2 > nginx3 > app  
 nginx4 > app
 
+
+### Запуск  
+
+```docker compose up -d``` или ```docker-compose up -d```
+
 ### Тестирование с помощью curl  
 
 Запрос на nginx1  
@@ -23,7 +28,7 @@ nginx4 > app
 
 и так далее. порт для nginxN = 808N
 
-Проверка подмены заголовка  
+Проверка защиты от подмены заголовка  
 ```curl -s -H "X-Forwarded-For: 1.2.3.4" http://localhost:8081 | jq '."X-Forwarded-For"'```
 
 
